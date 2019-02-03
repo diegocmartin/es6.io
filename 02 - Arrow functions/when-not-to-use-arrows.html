@@ -12,14 +12,14 @@
 <button id="pushy">Push Me</button>
 
 <script>
-  // When you really need `this`
+  // Cuando necesitas `this`
   const button = document.querySelector('#pushy');
   button.addEventListener('click', function() {
     console.log(this);
     this.classList.toggle('on');
   });
 
-  // When you need a method to bind to an object
+  // Cuando necesitas un método para ligar un objeto
   const person = {
     points: 23,
     score() {
@@ -28,7 +28,7 @@
     }
   }
 
-  // When you need to add a prototype method
+  // Cuando necesitas prototipar
   class Car {
     constructor(make, colour) {
       this.make = make;
@@ -43,7 +43,7 @@
      return `This car is a ${this.make} in the colour ${this.colour}`;
   };
 
-  // When you need arguments object
+  // Cuando necesitamos el objeto arguments
   const orderChildren = function() {
     const children = Array.from(arguments);
     return children.map((child, i) => {

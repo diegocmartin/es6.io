@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Arrow functions → → </title>
+</head>
+<body>
+<script>
+  const names = ['Pedro', 'Pepe', 'Paco'];
+  //Queremos agregar un apellido a los nombres de la lista  
+  const fullNames = names.map(function(name) {
+    return `${name} Apellido`;
+  });
+  //1- Eliminamos la palabra reservada function
+  const fullNames2 = names.map((name) => {
+    return `${name} Apellido`;
+  });
+  //2- Si hay un sólo parámetro se pueden quitar los paréntesis
+  const fullNames3 = names.map(name => {
+    return `${name} Apellido`;
+  });
+  //3- Podemos quitar el return, ya que el arrow lo lleva implícito
+  //También podemos eliminar las llaves
+  const fullNames4 = names.map(name => `${name} Apellido`);
+  //Si no enviamos parámetro, ponemos los paréntesis vacíos
+  const fullNames5 = names.map(() => `Un Apellido`);
+  //Es una función anónima, por ello debemos asignarla
+  const sayMyName = (name) => {
+    alert(`Hola ${name}!`)
+  }
+  sayMyName('Diego');
+
+</script>
+</body>
+</html>
