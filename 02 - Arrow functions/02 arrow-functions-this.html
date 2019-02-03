@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Arrow Functions</title>
+</head>
+<body>
+
+  <style>
+    .wrap {
+      min-height: 100vh;
+      display:flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+      font-weight: 100;
+      color:white;
+    }
+
+    .box {
+      background:black url(https://unsplash.it/1500/1500?image=560&blur=0.5) center fixed no-repeat;
+      width:50px;
+      height:50px;
+      padding:50px;
+      transition: width 0.2s, height 0.6s;
+      position: relative;
+    }
+
+    .box.opening {
+      width:500px;
+      height:500px;
+    }
+
+    .box h2 {
+      position: absolute;
+      width:100%;
+      font-size: 100px;
+      transform:translateX(-200%);
+      transition: all 0.5s;
+      top:0;
+    }
+
+    .box p {
+      position: absolute;
+      width:100%;
+      transform:translateX(200%);
+      transition: all 0.5s;
+      bottom:0;
+    }
+
+    .box.open > * {
+      transform:translateX(0%);
+    }
+  </style>
+
+  <div class="wrap">
+    <div class="box">
+      <h2>Diego C</h2>
+      <p class="social">@diemarm</p>
+    </div>
+  </div>
+
+  <script>
+    //Obtengo la caja que contiene el texto
+    const box = document.querySelector('.box');
+    //Le agregamos un evento clic con función anónima
+    /* box.addEventListener('click', function(){
+      //Si echamos un vistazo veremos que tenemos todo el div:
+      console.log(this);
+    }); */
+    //Veamos qué ocurre si sustituimos la función anónima por un arrow
+   /*  box.addEventListener('click', ()=>{
+      console.log(this);
+      //Observamos que this en este caso nos devuelve window
+      //El valor de this no apunta a la propia función
+      //Se hereda del ámbito padre
+    }); */
+/*     box.addEventListener('click', function(){
+      //ahora vamos a intercambiar la clase para que se abra la caja
+      this.classList.toggle('opening');
+      //ahora esperamos un poco y le volvemos a cambiar la clase
+      setTimeout(function(){
+        console.log(this.classList);
+        //Obtenemos undefined, como podemos ver en el log de arriba
+        //Si miramos que tiene this veremos que es window de nuevo
+        console.log(this);
+        this.classList.toggle('open');
+        //En estas situaciones lo que haríamos sería
+        //guardar en una variable adicional el valor de this
+        //Pero como hemos visto antes, las arrow heredan del padre
+      });
+    }); */
+    box.addEventListener('click', function(){
+      this.classList.toggle('opening');
+      setTimeout(()=>{
+        console.log(this.classList);
+        console.log(this);
+        this.classList.toggle('open');
+        //Le agregaremos un tiempo de espera
+      }, 500);
+    });
+  </script>
+
+</body>
+</html>
