@@ -64,18 +64,18 @@
     //Obtengo la caja que contiene el texto
     const box = document.querySelector('.box');
     //Le agregamos un evento clic con función anónima
-    /* box.addEventListener('click', function(){
+     /* box.addEventListener('click', function(){
       //Si echamos un vistazo veremos que tenemos todo el div:
       console.log(this);
     }); */
     //Veamos qué ocurre si sustituimos la función anónima por un arrow
-   /*  box.addEventListener('click', ()=>{
+    /* box.addEventListener('click', ()=>{
       console.log(this);
       //Observamos que this en este caso nos devuelve window
       //El valor de this no apunta a la propia función
       //Se hereda del ámbito padre
     }); */
-/*     box.addEventListener('click', function(){
+    /* box.addEventListener('click', function(){
       //ahora vamos a intercambiar la clase para que se abra la caja
       this.classList.toggle('opening');
       //ahora esperamos un poco y le volvemos a cambiar la clase
@@ -90,7 +90,7 @@
         //Pero como hemos visto antes, las arrow heredan del padre
       });
     }); */
-    box.addEventListener('click', function(){
+     box.addEventListener('click', function(){
       this.classList.toggle('opening');
       setTimeout(()=>{
         console.log(this.classList);
@@ -98,7 +98,7 @@
         this.classList.toggle('open');
         //Le agregaremos un tiempo de espera
       }, 500);
-    });
+    }); 
   </script>
 
 </body>
