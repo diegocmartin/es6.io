@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Destructuring!</title>
+</head>
+<body>
+<script>
+  const persona = {
+    first: 'DiegoC',
+    last: 'Martin',
+    country: 'Spain',
+    city: 'Illesconsin',
+    twitter: '@diemarm'
+  };
+//Crea una variable llamada first, otra last 
+//y otra twitter y coges los datos de persona
+  const { first, last, twitter } = persona;
+
+  const diego = {
+    first: 'DiegoC',
+    last: 'Martin',
+    links: {
+      social: {
+        twitter: 'https://twitter.com/diemarm',
+        facebook: 'https://facebook.com/diego',
+      },
+      web: {
+        blog: 'https://www.diegocmartin.com'
+      }
+    }
+  };
+//Destructuring y renombrado
+  const { twitter: tweet, facebook: fb } = diego.links.social;
+
+  const settings = { width: 300, color: 'black' }  
+  //Necesitamos también height, fontSize
+  //Con la siguiente línea el sistema coge los valores que existen de settings
+  const { width = 100, height = 100, color = 'blue', fontSize = 25} = settings;
+
+</script>
+</body>
+</html>

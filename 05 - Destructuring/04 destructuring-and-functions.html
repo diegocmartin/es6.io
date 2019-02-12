@@ -15,7 +15,16 @@
     };
     return converted;
   }
-
+  //Devolvemos el objeto entero
+    const {USD, MEX} = convertCurrency(100);
+  //Pero con destructuring podemos coger sólo 
+  //parte de lo que devuelve la función
+  console.log(USD, MEX);
+  
+  //Dentro de la declaración de los parámetros de la función
+  //podemos usar destructuring para usarlos luego por separado
+  //con ={} estamos creando una asignación vacía por omisión
+  //de forma que podemos llamar a la función también sin parámetros
   function tipCalc({ total = 100, tip = 0.15, tax = 0.13 } = {}) {
     return total + (tip * total) + (tax * total);
   }
