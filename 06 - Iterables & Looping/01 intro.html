@@ -26,18 +26,24 @@
   // for (let i = 0; i < cuts.length; i++) {
   //   console.log(cuts[i]);
   // }
-
+  
+  //El bucle forEach no se puede detener o saltar.
+  //Si pruebas a descomentar el continue o el break da error.
   // cuts.forEach((cut) => {
   //   console.log(cut);
   //   if(cut === 'Brisket') {
   //     continue;
+  //     break;
   //   }
   // });
 
+  //For .. in se mueve por los índices
   // for (const index in cuts) {
   //   console.log(cuts[index]);
   // }
 
+  //for .. of puede iterar sobre cualquier cosa iterable
+  //Funciona continue para saltar o break para salir.
   for (const cut of cuts) {
     if(cut === 'Brisket') {
       continue;
