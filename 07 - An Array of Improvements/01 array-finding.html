@@ -6,7 +6,8 @@
 </head>
 <body>
 <script>
-  /* eslint-disable */
+  /* Tenemos los datos que devuelve una API
+  en un array de objetos */
   const posts = [
      {
         "code":"BAcyDyQwcXX",
@@ -177,12 +178,23 @@
         "display_src":"https://scontent.cdninstagram.com/hphotos-xpt1/t51.2885-15/e35/11326072_550275398458202_1726754023_n.jpg"
      }
   ];
-  const code = 'VBgtGQcSf';
-  const post = posts.find(post => post.code === code);
+  //Al tratarse de un Array tenemos los índices para navegr por los objetos
 
+  const code = 'VBgtGQcSf';
+  //find devuelve true si encuenta lo que buscamos
+  //recorriendo todos los elementos del array
+  const post = posts.find(post => post.code === code);
+//Ahora suponemos que queremos conocer la posición de un elemento del array
   const postIndex = posts.findIndex(post => post.code === code);
   console.log(postIndex);
-
+//Así lo haríamos más desglosado:
+const postIndex2 = posts.findIndex((post) => {
+      if(post.code===code) {
+         return true;
+      }
+      return false;
+});
+  
 </script>
 </body>
 </html>

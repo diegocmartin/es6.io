@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spread Examples</title>
+</head>
+<body>
+  <div class="people">
+    <p>Wes</p>
+    <p>Kait</p>
+    <p>Randy</p>
+  </div>
+<script>
+  var people = document.querySelectorAll('.people p');
+  //Si intentamos hacer const names = people.map, dará error
+  //porque lo que tenemos es un node list que no tiene el método map
+  //podemos transformarlo en array
+  people = Array.from(document.querySelectorAll('.people p'));
+  //O podemos usar spread
+  people = [...document.querySelectorAll('.people p')];
+  const names = people.map((person) => person.textContent );
+
+//Ahora queremos usar un array en la propiedad de un objeto
+  const carbonara = {
+    pizzaName: 'Carbonara',
+    size: 'Medium',
+    ingredientes: ['Nata', 'Salchicha', 'Cebolla', 'Queso']
+  };
+
+  const listaCompra = ['Leche', 'Harina', ...carbonara.ingredientes];
+  // console.log(listaCompra);
+
+  //Supongamos que queremos eliminar un elemento de la siguiente lista de objetos
+  const comments = [
+    { id: 209384, text: 'I love your dog!' },
+    { id: 523423, text: 'Cuuute! 🐐' },
+    { id: 632429, text: 'You are so dumb' },
+    { id: 192834, text: 'Nice work on this wes!' },
+  ];
+  const id = 632429;
+  //Obtenemos el indice dentro del array en el que se encuentra el objeto a eliminar
+  const commentIndex = comments.findIndex(comment => comment.id === id);
+  //Podríamos montar el array resultante con slice saltanto el elemento a eliminar
+  var newComments = [comments.slice(0,commentIndex), comments.slice(commentIndex + 1)];
+  //Pero esto nos da un array de arrays
+  console.log(newComments);
+  //Con spread la sacamos directamente
+  newComments = [...comments.slice(0,commentIndex), ...comments.slice(commentIndex + 1)];
+  console.log(newComments);
+
+</script>
+</body>
+</html>

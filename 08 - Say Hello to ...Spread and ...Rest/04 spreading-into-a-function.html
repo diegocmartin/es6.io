@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spread Examples</title>
+</head>
+<body>
+<script>
+  const inventors = ['Einstein', 'Newton', 'Galileo'];
+  const newInventors = ['Musk', 'Jobs'];
+  //Quiero poner a los nuevos inventores al final de los inventores
+  //Sin crear un tercer array
+  inventors.push(...newInventors);
+  //Si no usamos el rest nos mete un array dentro del otro
+  console.log(inventors);
+
+  const nombre = ['Pepe', 'Lopez'];
+  function diHola(nom, apellido) {
+    alert(`Hey there ${nom} ${apellido}`);
+  }
+//podemos también pasar los elementos como parámetros
+  diHola(...nombre);
+
+</script>
+</body>
+</html>
+
+

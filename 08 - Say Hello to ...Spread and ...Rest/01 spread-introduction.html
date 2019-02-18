@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The ...Spread Operator</title>
+</head>
+<body>
+<script>
+//El operador spread coge todos los elementos de un iterable
+//Y los pone de uno en uno dnd queramos
+//Arrays, objects, arguments, nodos del DOM, strings..
+//Prueba a poner en la consola [..."algo"]
+  const featured = ['Deep Dish', 'Pepperoni', 'Hawaiian'];
+  const specialty = ['Meatzza', 'Spicy Mama', 'Margherita'];
+//Entonces podemos fácilmente concatenar Arrays
+  const pizzas = [...featured, 'veg', ...specialty];
+  const fridayPizzas = [...pizzas];
+//La línea anterior no es lo mismo que hacer una asignación
+//porque con una asignación, si modificamos un elemento 
+//del array, se "modificaría" en ambos porque apuntan al 
+//mismo valor en memoria.
+fridayPizzas[0]='hola';
+console.log(pizzas);
+console.log(fridayPizzas);
+</script>
+</body>
+</html>

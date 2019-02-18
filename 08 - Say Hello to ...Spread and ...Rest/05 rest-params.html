@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>The ...Rest Param</title>
+</head>
+<body>
+<script>
+  const runner = ['Lolo', 123, 5.5, 5, 3, 6, 35];
+  //Queremos considerar al primer valor como el nombre
+  //al segundo como el id, y el resto los tiempos de las carreras
+  const [name, id, ...runs] = runner;
+  //Usamos destructuring y rest para obtener un array con los tiempos
+  console.log(name, id, runs);
+</script>
+</body>
+</html>

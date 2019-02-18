@@ -32,11 +32,17 @@
   <h2 class="jump">SPREADS!</h2>
 
 <script>
-  const heading = document.querySelector('.jump');
-  heading.innerHTML = sparanWrap(heading.textContent);
 
-  function sparanWrap(word) {
-    return [...word].map(letter => `<span>${letter}</span>`).join('');
+  const heading = document.querySelector('.jump');
+  heading.innerHTML = separarEstilar(heading.textContent);
+//Debemos separar el string en caracteres en un array
+//para meterlo en un span con el estilado correspondiente
+  function separarEstilar(palabra) {
+    //devolvemos el resultado de primero separar la palabra
+    //en un array letra por letra, lo cual lo mapeamos para
+    //formar otro array con cada letra metida en un span
+    //usamos join para eliinar las comas de separación
+    return [...palabra].map(letra => `<span>${letra}</span>`).join('');
   }
 </script>
 </body>
